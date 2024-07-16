@@ -6,12 +6,14 @@ import Login from "../pages/Login";
 import Register from "../pages/Register";
 import MyList from "../pages/MyList";
 import PrivateRoutes from "./PrivateRoutes";
+import NotFound from "../pages/NotFound";
 
 
 const router = createBrowserRouter([
     {
         path: '/',
         element: <Root />,
+        errorElement: <NotFound />,
         children: [
             {
                 path: '/',
