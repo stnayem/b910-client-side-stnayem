@@ -1,7 +1,17 @@
 import { Link, NavLink } from "react-router-dom";
+import useAuth from "../auth/useAuth";
+import toast, { Toaster } from "react-hot-toast";
 
 
 const Navbar = () => {
+
+    const {
+        loading,
+        setLoading,
+        user,
+        logOut
+    } = useAuth() || {};
+
     const navLinksStyle = ({ isActive, isPending }) =>
         isPending
             ? "pending"
@@ -12,10 +22,24 @@ const Navbar = () => {
     const navLinks = <>
         <li><NavLink className={navLinksStyle} to="/">Home</NavLink></li>
         <li><NavLink className={navLinksStyle} to="/alltouristsspot">All Tourists Spot</NavLink></li>
-        <li><NavLink className={navLinksStyle} to="/mylist">My List</NavLink></li>
+        {
+            user && <>
+                <li><NavLink className={navLinksStyle} to="/mylist">My List</NavLink></li>
+
+            </>
+        }
     </>
+
+    const handleLogout = () => {
+        logOut()
+            .then(() => toast.success("Sign out success!"))
+            .catch(error => toast.error(error))
+    }
+
+
     return (
         <div>
+            <Toaster toastOptions={{ duration: 2000, }} />
             <div className="navbar bg-base-100">
                 <div className="navbar-start">
                     <div className="dropdown">
@@ -52,7 +76,23 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <Link to="/login" className="">Login</Link>
+                    {
+                        user ? <>
+                            {/* dropdown from daisyUI */}
+                            <Link to='/userProfile'
+                                data-tip={user?.displayName}
+                                // data-tip={`{user?.displayName}{user?.email}`}
+                                className="tooltip tooltip-bottom h:tooltip-open border-2 rounded-full bg-[#12132D08] hover:bg-gray-200">
+                                <img className="rounded-full w-10 h-10" src={user?.photoURL ? user?.photoURL : 'https://i.imgur.com/K7tQyJe.png'} alt="Profile Picture" ></img>
+                            </Link>
+                            <button className="bg-slate-100 mt-2 btn ml-4"><a onClick={handleLogout}>Logout</a></button>
+
+                        </> :
+                            <Link to="/login" className="text-[#8D493A] font-bold py-2 px-4 hover:bg-[#F8EDE3] border-2 rounded-lg">Login</Link>
+                    }
+
+
+
                 </div>
             </div>
         </div>
