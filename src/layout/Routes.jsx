@@ -17,19 +17,19 @@ const router = createBrowserRouter([
                 element: <Home />
             },
             {
-                path: '/',
+                path: '/alltouristsspot',
                 element: <AllTouristsSpot />
             },
             {
-                path: '/',
+                path: '/login',
                 element: <Login />
             },
             {
-                path: '/',
+                path: '/register',
                 element: <Register />
             },
             {
-                path: '/',
+                path: '/mylist',
                 element: <MyList />
             }
 
