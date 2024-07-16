@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 
 const Navbar = () => {
@@ -6,14 +6,12 @@ const Navbar = () => {
         isPending
             ? "pending"
             : isActive
-                ? "text-[#FF497C] border-b-4 border-[#FF497C] mr-4"
-                : "hover:text-[#FF497C]  mr-4";
+                ? "text-[#8D493A] border-b-4 border-[#8D493A] mr-4"
+                : "hover:text-[#8D493A] hover:bg-[#F8EDE3] p-2 rounded-lg  mr-4";
 
     const navLinks = <>
         <li><NavLink className={navLinksStyle} to="/">Home</NavLink></li>
         <li><NavLink className={navLinksStyle} to="/alltouristsspot">All Tourists Spot</NavLink></li>
-        <li><NavLink className={navLinksStyle} to="/login">Login</NavLink></li>
-        <li><NavLink className={navLinksStyle} to="/register">Register</NavLink></li>
         <li><NavLink className={navLinksStyle} to="/mylist">My List</NavLink></li>
     </>
     return (
@@ -44,7 +42,7 @@ const Navbar = () => {
                             }
                         </ul>
                     </div>
-                    <a className="btn btn-ghost text-xl">daisyUI</a>
+                    <a className="btn btn-ghost text-xl">World Tour</a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu-horizontal">
@@ -54,7 +52,7 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <a className="btn">Button</a>
+                    <Link to="/login" className="">Login</Link>
                 </div>
             </div>
         </div>
