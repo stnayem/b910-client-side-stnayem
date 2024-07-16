@@ -4,16 +4,13 @@ import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
 import useAuth from '../auth/useAuth';
 import toast, { Toaster } from 'react-hot-toast';
+import GoogAndGitSignIn from '../components/GoogAndGitSignIn';
 
 const Register = () => {
     const {
-        loading,
         setLoading,
         signupwithemailpassword,
         updateUserProfile,
-        signinWithGoogle,
-        signinWithGithub,
-        logOut
     } = useAuth() || {};
 
     const navigate = useNavigate();
@@ -42,14 +39,13 @@ const Register = () => {
                         console.log(result.user)
                         setLoading(false);
                         navigate(location?.state ? location?.state : "/");
-                        // navigate('/');
-                        // toast.success('Registered successful')
+                        toast.success('Registered successful')
                     })
             })
             .catch(error => {
                 console.error("02", error)
-                // setLoading(false);
-                // toast.error(error.message);
+                setLoading(false);
+                toast.error(error.message);
             });
 
 
@@ -57,35 +53,6 @@ const Register = () => {
 
     }
 
-    // const handleProviderSignIn = (provider) => {
-    //     provider()
-    //         .then(result => {
-    //             if (result.user) {
-    //                 console.log(result.user);
-    //                 // navigate((location?.state ? (location.state) : '/'), { state: { from: 'login' } })
-    //             }
-
-    //         })
-    //         .catch(error => {
-    //             console.error("Oops, error", error);
-    //             // toast.error('Oops, login failed!');
-    //         });
-    // }
-
-    const handleGoogleProvider = () => {
-        signinWithGoogle()
-            .then((result) => {
-                console.log(result.user)
-                setLoading(false);
-                navigate(location?.state ? location.state : "/");
-                toast.success("Login successful");
-            })
-            .catch((err) => {
-                console.error(err);
-                setLoading(false);
-                toast.error(err.message);
-            });
-    }
 
     return (
         <div className="relative bg-cover bg-center h-screen">
@@ -150,11 +117,7 @@ const Register = () => {
                                 <Link to='/login' className="font-bold text-blue-700">Login</Link>
                             </div>
                         </form>
-                        <div className="my-2 flex flex-col sm:flex-row sm:justify-center sm:space-x-4
-                            *:py-2 *:flex *:items-center *:px-4 *:rounded-lg *:bg-[#F8EDE3]">
-                            <button onClick={() => handleGoogleProvider()}><FcGoogle className="mr-2" />Sign up with Google</button>
-                            <button onClick={() => handleGoogleProvider()}><FaGithub className="mr-2" />Sign up with Github</button>
-                        </div>
+                        <GoogAndGitSignIn />
 
                     </div>
                 </div>
