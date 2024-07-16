@@ -77,11 +77,6 @@ const Login = () => {
                                 <div className="form-control mt-6">
                                     <button className="btn btn-primary">Login</button>
                                 </div>
-                                <div className="flex flex-col sm:flex-row sm:justify-center sm:space-x-4
-                            *:py-2 *:flex *:items-center *:px-4 *:rounded-lg *:bg-[#F8EDE3]">
-                                    <button><FcGoogle className="mr-2" />Sign in with Google</button>
-                                    <button><FaGithub className="mr-2" />Sign in with Github</button>
-                                </div>
                                 <div className="w-full text-center">
                                     <span>Do not have an account? </span>
                                     <Link to='/register' className="font-bold text-blue-700">Register</Link>
