@@ -38,7 +38,7 @@ const Navbar = () => {
 
 
     return (
-        <div>
+        <div className="max-w-7xl mx-auto">
             <Toaster toastOptions={{ duration: 2000, }} />
             <div className="navbar bg-base-100">
                 <div className="navbar-start">
@@ -59,14 +59,14 @@ const Navbar = () => {
                         </div>
                         <ul
                             tabIndex={0}
-                            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow
+                            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[11] mt-3 w-52 p-2 shadow
                             ">
                             {
                                 navLinks
                             }
                         </ul>
                     </div>
-                    <a className="btn btn-ghost text-xl">World Tour</a>
+                    <a className="text-[#8D493A] text-lg md:text-3xl bg-[#F8EDE3] font-bold shadow-stone-500 border rounded-full py-2 px-4">World Tour</a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu-horizontal">
@@ -81,7 +81,6 @@ const Navbar = () => {
                             {/* dropdown from daisyUI */}
                             <Link to='/userProfile'
                                 data-tip={user?.displayName}
-                                // data-tip={`{user?.displayName}{user?.email}`}
                                 className="tooltip tooltip-bottom h:tooltip-open border-2 rounded-full bg-[#12132D08] hover:bg-gray-200">
                                 <img className="rounded-full w-10 h-10" src={user?.photoURL ? user?.photoURL : 'https://i.imgur.com/K7tQyJe.png'} alt="Profile Picture" ></img>
                             </Link>

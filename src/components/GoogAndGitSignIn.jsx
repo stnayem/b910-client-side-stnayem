@@ -32,10 +32,10 @@ const GoogAndGitSignIn = () => {
     return (
         <div>
             <Toaster toastOptions={{ duration: 3000, }} />
-            <div className="my-2 flex flex-col sm:flex-row sm:justify-center sm:space-x-4
-                            *:py-2 *:flex *:items-center *:px-4 *:rounded-lg *:bg-[#F8EDE3]">
-                <button onClick={() => handleGoogAndGitSignIn(signinWithGoogle)}><FcGoogle className="mr-2" />Sign in with Google</button>
-                <button onClick={() => handleGoogAndGitSignIn(signinWithGithub)}><FaGithub className="mr-2" />Sign in with Github</button>
+            <div className="mb-8 flex flex-col lg:flex-row items-center lg:justify-center space-y-4 space-x-0 lg:space-y-0 lg:space-x-4
+                            *:py-2 *:shadow-md *:flex *:justify-center *:items-center *:px-4 *:rounded-lg *:bg-[#F8EDE3]">
+                <button className="w-5/6 lg:w-auto" onClick={() => handleGoogAndGitSignIn(signinWithGoogle)}><FcGoogle className="mr-2" />Sign in with Google</button>
+                <button className="w-5/6 lg:w-auto" onClick={() => handleGoogAndGitSignIn(signinWithGithub)}><FaGithub className="mr-2" />Sign in with Github</button>
             </div>
         </div>
     );

@@ -39,7 +39,7 @@ const Login = () => {
     return (
         <div>
             <Toaster toastOptions={{ duration: 6000, }} />
-            <div className="relative bg-cover bg-center h-screen">
+            <div className="relative bg-cover bg-center">
                 <div className="absolute inset-0"
                     style={{
                         backgroundImage: `url(${Matterhorn})`,
@@ -49,17 +49,17 @@ const Login = () => {
                         zIndex: -1,
                     }}
                 ></div>
-                <div className="relative z-10 hero  min-h-screen"
+                <div className="relative z-10 hero px-4  max-w-7xl mx-auto"
                 >
-                    <div className="w-full  hero-content flex-col lg:flex-row-reverse">
-                        <div className="w-1/2  text-center lg:text-left text-white"
+                    <div className="w-full py-8 flex flex-col items-center">
+                        <div className="w-full *:text-center lg:text-left text-white"
                         >
                             <h1 className="text-5xl font-bold">Login now!</h1>
                             <p className="py-6">
                                 Find exclusive rewards in every corner of the world!
                             </p>
                         </div>
-                        <div className="w-1/2 card bg-base-100 shrink-0 shadow-2xl">
+                        <div className="w-full sm:w-3/4 md:w-1/2 card bg-base-100 shrink-0 shadow-2xl">
                             <form onSubmit={handleLogin} className="card-body">
                                 <div className="form-control">
                                     <label className="label">
