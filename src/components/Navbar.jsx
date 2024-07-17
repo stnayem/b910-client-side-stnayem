@@ -79,15 +79,17 @@ const Navbar = () => {
                     {
                         user ? <>
                             {/* dropdown from daisyUI */}
-                            <Link to='/userProfile'
-                                data-tip={user?.displayName}
-                                className="tooltip tooltip-bottom h:tooltip-open border-2 rounded-full bg-[#12132D08] hover:bg-gray-200">
-                                <img className="rounded-full w-10 h-10" src={user?.photoURL ? user?.photoURL : 'https://i.imgur.com/K7tQyJe.png'} alt="Profile Picture" ></img>
-                            </Link>
-                            <button className="bg-slate-100 mt-2 btn ml-4"><a onClick={handleLogout}>Logout</a></button>
-
+                            <div className="dropdown">
+                                <div tabIndex={0} role="button" className="shadow-lg rounded-full m-1">
+                                    <img className="rounded-full w-10 h-10" src={user?.photoURL ? user?.photoURL : 'https://i.imgur.com/K7tQyJe.png'} alt="Profile Picture" ></img>
+                                </div>
+                                <ul tabIndex={0} className="w-32 mx-auto dropdown-content menu bg-base-100 rounded-box z-[1] p-2 shadow">
+                                    <li className="text-[#8D493A] font-medium mb-2   mx-auto">{user?.displayName}</li>
+                                    <li><button className="btn-style"><a onClick={handleLogout}>Logout</a></button></li>
+                                </ul>
+                            </div>
                         </> :
-                            <Link to="/login" className="text-[#8D493A] font-bold py-2 px-4 hover:bg-[#F8EDE3] border-2 rounded-lg">Login</Link>
+                            <Link to="/login" className="btn-style">Login</Link>
                     }
 
 
