@@ -1,7 +1,8 @@
-import { Link } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
 
 
-const SpotCard = ({ spot }) => {
+const TouristSpotDetails = () => {
+    const spot = useLoaderData();
     const {
         _id,
         photoUrl,
@@ -26,7 +27,7 @@ const SpotCard = ({ spot }) => {
                     <h2 className="card-title">{spotName}</h2>
                     <p>{short_description}</p>
                     <div className="card-actions justify-end">
-                        <Link to={`/spot/${_id}`} className="btn btn-primary">Spot Details</Link>
+                        <button className="btn btn-primary">Spot Details</button>
                     </div>
                 </div>
             </div>
@@ -34,4 +35,4 @@ const SpotCard = ({ spot }) => {
     );
 };
 
-export default SpotCard;
+export default TouristSpotDetails;
