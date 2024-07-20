@@ -1,7 +1,5 @@
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Matterhorn from '../assets/europe-imgs/16_Matterhorn_Zermatt.jpg';
-import { FcGoogle } from "react-icons/fc";
-import { FaGithub } from "react-icons/fa";
 import useAuth from '../auth/useAuth';
 import toast, { Toaster } from 'react-hot-toast';
 import GoogAndGitSignIn from '../components/GoogAndGitSignIn';

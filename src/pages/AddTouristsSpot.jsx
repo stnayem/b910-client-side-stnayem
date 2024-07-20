@@ -1,3 +1,4 @@
+import toast, { Toaster } from "react-hot-toast";
 
 
 
@@ -26,10 +27,22 @@ const AddTouristsSpot = () => {
             totalVisitorsPerYear,
         }
         console.log(touristsSpotDetails);
+        fetch('http://localhost:5005/addTouristsSpot', {
+            method: 'POST',
+            headers: { "content-type": "application/json" },
+            body: JSON.stringify(touristsSpotDetails)
+        }).then(resp => resp.json())
+            .then(data => {
+                if (data.insertedId) {
+                    toast.success('Data successfully added to Database!')
+                }
+                console.log(data)
+            })
 
     }
     return (
         <div className="max-w-7xl mx-auto">
+            <Toaster toastOptions={{ duration: 6000, }} />
             <div>
                 <h2 className="text-center bg-[#F8EDE3] py-2  text-2xl font-semibold">Add Tourists Spot</h2>
                 <form onSubmit={handleAddTouristsSpot} className="card-body grid md:grid-cols-2 gap-0 md:gap-4 mx-auto w-auto md:max-w-4xl">
