@@ -1,8 +1,8 @@
-import React from 'react';
+
 
 const Footer = () => {
     return (
-        <div className="bg-base-200">
+        <div className="bg-base-200 mt-6">
             <footer className="max-w-7xl mx-auto footer 
             grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4
             text-base-content p-10">

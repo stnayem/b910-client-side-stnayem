@@ -6,7 +6,6 @@ import toast, { Toaster } from "react-hot-toast";
 const Navbar = () => {
 
     const {
-        loading,
         setLoading,
         user,
         logOut
@@ -25,6 +24,7 @@ const Navbar = () => {
         {
             user && <>
                 <li><NavLink className={navLinksStyle} to="/mylist">My List</NavLink></li>
+                <li><NavLink className={navLinksStyle} to="/addtouristsspot">Add Tourists Spot</NavLink></li>
 
             </>
         }
@@ -32,13 +32,16 @@ const Navbar = () => {
 
     const handleLogout = () => {
         logOut()
-            .then(() => toast.success("Sign out success!"))
+            .then(() => {
+                setLoading(false);
+                toast.success("Sign out success!")
+            })
             .catch(error => toast.error(error))
     }
 
 
     return (
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-7xl mx-auto py-4">
             <Toaster toastOptions={{ duration: 2000, }} />
             <div className="navbar bg-base-100">
                 <div className="navbar-start">
