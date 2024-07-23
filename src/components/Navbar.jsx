@@ -78,7 +78,7 @@ const Navbar = () => {
                         }
                     </ul>
                 </div>
-                <div className="navbar-end">
+                <div className="navbar-end z-50">
                     {
                         user ? <>
                             {/* dropdown from daisyUI */}

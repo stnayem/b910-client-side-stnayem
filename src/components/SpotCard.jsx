@@ -13,6 +13,7 @@ const SpotCard = ({ spot }) => {
         seasonality,
         travelTime,
         totalVisitorsPerYear,
+        userEmail
     } = spot;
     return (
         <div>
@@ -25,6 +26,7 @@ const SpotCard = ({ spot }) => {
                 <div className="card-body">
                     <h2 className="card-title">{spotName}</h2>
                     <p>{short_description}</p>
+                    <p>Email: {userEmail}</p>
                     <div className="card-actions justify-end">
                         <Link to={`/spot/${_id}`} className="btn btn-primary">Spot Details</Link>
                     </div>
