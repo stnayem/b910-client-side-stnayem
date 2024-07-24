@@ -28,18 +28,23 @@ const AllTouristsSpot = () => {
     return (
         <div className="max-w-7xl mx-auto">
             <div className="flex justify-between items-center">
-                <div></div>
-                <h2 className="h3-home">All Tourist Spot</h2>
-                <div className="dropdown ">
-                    <div tabIndex={0} role="button" className="btn m-1">Sort By</div>
-                    <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
-                        <li><a onClick={handleLowestPrice}>Lowest Price</a></li>
-                        <li><a onClick={() => handleHighestPrice()}>Highest Price</a></li>
-                    </ul>
+
+
+                <div className="">
+                    <div className="dropdown">
+                        <div tabIndex={0} role="button" className="btn m-1">Sort By</div>
+                        <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
+                            <li><a onClick={handleLowestPrice}>Lowest Price</a></li>
+                            <li><a onClick={() => handleHighestPrice()}>Highest Price</a></li>
+                        </ul>
+                    </div>
                 </div>
+                <h2 className="h3-home">All Tourist Spot</h2>
+                <div></div>
+
 
             </div>
-            <div className="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+            <div className="grid gap-y-10 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
                 {
                     sortedSpots.map(tempSpot => <SpotCard key={tempSpot._id} spot={tempSpot}></SpotCard>)
                 }
