@@ -1,4 +1,4 @@
-
+import { FaInstagram } from "react-icons/fa";
 
 const Footer = () => {
     return (
@@ -26,6 +26,20 @@ const Footer = () => {
                     <a className="link link-hover">Privacy policy</a>
                     <a className="link link-hover">Cookie policy</a>
                 </nav>
+                <nav>
+                    <h6 className="footer-title">Connect with us</h6>
+
+                    <div className="flex gap-4">
+                        <a href="http://www.facebook.com" target="_blank"><img className="w-8" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/facebook/facebook-original.svg" /></a>
+                        <a href="http://www.twitter.com" target="_blank"><img className="w-8" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/twitter/twitter-original.svg" /></a>
+                        <a href="http://www.instagram.com" target="_blank"><FaInstagram className="text-4xl" /></a>
+
+
+
+                    </div>
+
+
+                </nav>
                 <form className="col-span-2 sm:col-span-1">
                     <h6 className="footer-title">Newsletter</h6>
                     <fieldset className="form-control w-80">
@@ -41,6 +55,7 @@ const Footer = () => {
                         </div>
                     </fieldset>
                 </form>
+
 
             </footer>
         </div>

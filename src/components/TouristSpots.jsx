@@ -15,8 +15,8 @@ const TouristSpots = () => {
     }, [])
     return (
         <div>
-            <h2 className="h3-home">Tourist Spots section</h2>
-            <div className="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 bg-red-200">
+            <h2 className="h3-home">Tourist Spot</h2>
+            <div className="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
                 {
                     spots.map(tempSpot => <SpotCard key={tempSpot._id} spot={tempSpot}></SpotCard>)
                 }

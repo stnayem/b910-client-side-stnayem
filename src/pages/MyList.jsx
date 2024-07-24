@@ -21,7 +21,7 @@ const MyList = () => {
     }, [control])
     return (
         <div className="max-w-7xl mx-auto">
-            <h2 className="text-2xl font-semibold">My List page</h2>
+            <h2 className="h3-home">My List</h2>
             {
                 mySpots.map(tempSpot => <SpotCardWUpdate
                     key={tempSpot._id}
