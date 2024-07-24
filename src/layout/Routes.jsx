@@ -10,6 +10,7 @@ import NotFound from "../pages/NotFound";
 import AddTouristsSpot from "../pages/AddTouristsSpot";
 import TouristSpotDetails from "../pages/TouristSpotDetails";
 import SpotDetailsUpdate from "../components/SpotDetailsUpdate";
+import SpecificCountry from "../pages/SpecificCountry";
 
 
 const router = createBrowserRouter([
@@ -52,8 +53,13 @@ const router = createBrowserRouter([
                 path: '/spot/:id',
                 element: <PrivateRoutes><TouristSpotDetails /></PrivateRoutes>,
                 loader: ({ params }) => fetch(`http://localhost:5005/addTouristsSpot/${params.id}`),
+            },
+            // France Italy Spain England Netherlands Switzerland
+            {
+                path: '/:country',
+                element: <SpecificCountry />,
+                loader: ({ params }) => fetch(`http://localhost:5005/allCountry/${params.country}`)
             }
-
 
         ]
     }

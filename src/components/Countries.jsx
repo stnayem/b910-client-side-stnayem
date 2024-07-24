@@ -6,18 +6,26 @@ import england from '../assets/europe-imgs/12_Stonehenge_Wiltshire.jpg';
 import netherlands from '../assets/europe-imgs/13_rijksmuseum-i-amsterdam-hd.jpg';
 import switzerland from '../assets/europe-imgs/18_Lake_Geneva_Geneva.png';
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 const Countries = () => {
+    const [allCountry, setAllCountry] = useState([])
+    useEffect(() => {
+        fetch('http://localhost:5005/allCountry')
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                setAllCountry(data);
+            })
+    }, [])
     return (
         <div>
             <h2 className="h3-home">Trending Destination</h2>
             <div className="grid sm:gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-                <Link to={`/country/france`} className="bg-red-300"><CountryCard name="France" img={france} /></Link>
-                <Link to={`/country/italy`} className="bg-red-300"><CountryCard name="Italy" img={italy} /></Link>
-                <Link to={`/country/spain`} className="bg-red-300"><CountryCard name="Spain" img={spain} /></Link>
-                <Link to={`/country/england`} className="bg-red-300"><CountryCard name="England" img={england} /></Link>
-                <Link to={`/country/netherlands`} className="bg-red-300"><CountryCard name="Netherlands" img={netherlands} /></Link>
-                <Link to={`/country/switzerland`} className="bg-red-300"><CountryCard name="Switzerland" img={switzerland} /></Link>
+                {
+                    allCountry.map(tempCountry => <CountryCard
+                        key={tempCountry._id} newCountry={tempCountry} />)
+                }
             </div>
         </div>
     );

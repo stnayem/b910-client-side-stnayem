@@ -47,7 +47,7 @@ const SpotCardWUpdate = ({ spot, control, setControl }) => {
 
     return (
         <div>
-            <div className="card card-compact bg-base-100 w-96 shadow-xl">
+            <div className="card card-compact bg-base-100 h-full w-96 shadow-xl">
                 <figure>
                     <img
                         src={photoUrl}

@@ -3,22 +3,45 @@ import SpotCard from "../components/SpotCard";
 
 
 const AllTouristsSpot = () => {
-    const [spots, setSpots] = useState([]);
+    const [sortedSpots, setSortedSpots] = useState([]);
+
+    const handleLowestPrice = () => {
+        const sortedLowestPrice = [...sortedSpots].sort((a, b) => a.cost - b.cost);
+        setSortedSpots(sortedLowestPrice);
+    }
+
+    const handleHighestPrice = () => {
+        const sortedHighestPrice = [...sortedSpots].sort((a, b) => b.cost - a.cost);
+        setSortedSpots(sortedHighestPrice);
+    }
+
 
     useEffect(() => {
         fetch('http://localhost:5005/addTouristsSpot')
             .then(resp => resp.json())
             .then(data => {
-                console.log(data);
-                setSpots(data);
+
+                const sortedLowestPrice = data.sort((a, b) => a.cost - b.cost);
+                setSortedSpots(sortedLowestPrice);
             })
     }, [])
     return (
         <div className="max-w-7xl mx-auto">
-            <h2 className="h3-home">All Tourist Spot</h2>
+            <div className="flex justify-between items-center">
+                <div></div>
+                <h2 className="h3-home">All Tourist Spot</h2>
+                <div className="dropdown ">
+                    <div tabIndex={0} role="button" className="btn m-1">Sort By</div>
+                    <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
+                        <li><a onClick={handleLowestPrice}>Lowest Price</a></li>
+                        <li><a onClick={() => handleHighestPrice()}>Highest Price</a></li>
+                    </ul>
+                </div>
+
+            </div>
             <div className="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
                 {
-                    spots.map(tempSpot => <SpotCard key={tempSpot._id} spot={tempSpot}></SpotCard>)
+                    sortedSpots.map(tempSpot => <SpotCard key={tempSpot._id} spot={tempSpot}></SpotCard>)
                 }
             </div>
 

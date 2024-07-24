@@ -16,7 +16,7 @@ const TouristSpotDetails = () => {
         totalVisitorsPerYear,
     } = spot;
     return (
-        <div>
+        <div className="max-w-7xl mx-auto">
             <div className="card card-compact bg-base-100 w-96 shadow-xl">
                 <figure>
                     <img

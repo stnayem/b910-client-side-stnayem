@@ -17,7 +17,7 @@ const SpotCard = ({ spot }) => {
     } = spot;
     return (
         <div>
-            <div className="card card-compact bg-base-100 w-96 shadow-xl">
+            <div className="card card-compact bg-base-100 h-full w-96 shadow-xl">
                 <figure>
                     <img
                         src={photoUrl}
@@ -26,7 +26,7 @@ const SpotCard = ({ spot }) => {
                 <div className="card-body">
                     <h2 className="card-title">{spotName}</h2>
                     <p>{short_description}</p>
-                    <p>Email: {userEmail}</p>
+                    <p>Cost: {cost} Email: {userEmail}</p>
                     <div className="card-actions justify-end">
                         <Link to={`/spot/${_id}`} className="btn btn-primary">Spot Details</Link>
                     </div>
