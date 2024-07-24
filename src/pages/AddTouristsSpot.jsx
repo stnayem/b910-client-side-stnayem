@@ -54,18 +54,18 @@ const AddTouristsSpot = () => {
         <div className="max-w-7xl mx-auto">
             <Toaster toastOptions={{ duration: 6000, }} />
             <div>
-                <h2 className="text-center bg-[#F8EDE3] py-2  text-2xl font-semibold">Add Tourists Spot</h2>
+                <h2 className="text-center bg-[#F8EDE3] dark:bg-[#723801] py-2  text-2xl font-semibold">Add Tourists Spot</h2>
                 <form onSubmit={handleAddTouristsSpot} className="card-body grid md:grid-cols-2 gap-0 md:gap-4 mx-auto w-auto md:max-w-4xl">
                     <div className="form-control">
                         <label className="label">
-                            <span className="label-text">Photo</span>
+                            <span className="label-text dark:text-white ">Photo</span>
                         </label>
                         <input name="photoUrl" type="text" placeholder="Photo URL" className="input input-bordered" required />
                     </div>
 
                     <div className="form-control">
                         <label className="label">
-                            <span className="label-text">Tourist Spot Name</span>
+                            <span className="dark:text-white label-text">Tourist Spot Name</span>
                         </label>
                         <input name="spotName" type="text" placeholder="Tourist Spot Name" className="input input-bordered" required />
                     </div>
@@ -113,7 +113,7 @@ const AddTouristsSpot = () => {
 
                     <div className="form-control">
                         <label className="label">
-                            <span className="label-text">Location</span>
+                            <span className="dark:text-white label-text">Location</span>
                         </label>
                         <input name="location" type="text" placeholder="Location" className="input input-bordered" required />
 
@@ -121,33 +121,33 @@ const AddTouristsSpot = () => {
 
                     <div className="form-control">
                         <label className="label">
-                            <span className="label-text">Short Description</span>
+                            <span className="dark:text-white label-text">Short Description</span>
                         </label>
                         <input name="short_description" type="text" placeholder="Short Description" className="input input-bordered" required />
 
                     </div>
                     <div className="form-control">
                         <label className="label">
-                            <span className="label-text">Average Cost</span>
+                            <span className="dark:text-white label-text">Average Cost</span>
                         </label>
                         <input name="cost" type="text" placeholder="Average Cost" className="input input-bordered" required />
                     </div>
 
                     <div className="form-control">
                         <label className="label">
-                            <span className="label-text">Seasonality</span>
+                            <span className="dark:text-white label-text">Seasonality</span>
                         </label>
                         <input name="seasonality" type="text" placeholder="Seasonality" className="input input-bordered" required />
                     </div>
                     <div className="form-control">
                         <label className="label">
-                            <span className="label-text">Travel Time</span>
+                            <span className="dark:text-white label-text">Travel Time</span>
                         </label>
                         <input name="travelTime" type="text" placeholder="Travel Time" className="input input-bordered" required />
                     </div>
                     <div className="form-control md:col-span-2">
                         <label className="label">
-                            <span className="label-text">Total Visitors Per Year</span>
+                            <span className="dark:text-white label-text">Total Visitors Per Year</span>
                         </label>
                         <input name="totalVisitorsPerYear" type="text" placeholder="Total Visitors Per Year" className="input input-bordered" required />
                     </div>

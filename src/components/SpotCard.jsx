@@ -17,7 +17,7 @@ const SpotCard = ({ spot }) => {
     } = spot;
     return (
         <div>
-            <div className="card card-compact bg-base-100 h-full w-96 shadow-xl">
+            <div className="text-black card card-compact bg-base-100 h-full w-96 shadow-xl">
                 <figure>
                     <img
                         src={photoUrl}

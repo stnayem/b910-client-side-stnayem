@@ -18,7 +18,7 @@ const TouristSpots = () => {
             <h2 className="h3-home">Tourist Spot</h2>
             <div className="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
                 {
-                    spots.map(tempSpot => <SpotCard key={tempSpot._id} spot={tempSpot}></SpotCard>)
+                    spots.slice(0, 6).map(tempSpot => <SpotCard key={tempSpot._id} spot={tempSpot}></SpotCard>)
                 }
             </div>
 

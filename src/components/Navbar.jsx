@@ -3,13 +3,17 @@ import useAuth from "../auth/useAuth";
 import toast, { Toaster } from "react-hot-toast";
 
 
-const Navbar = () => {
+const Navbar = ({ darkMode, setDarkMode }) => {
 
     const {
         setLoading,
         user,
         logOut
     } = useAuth() || {};
+    // const handleDarkMode = () => {
+    //     setDarkMode(!darkMode);
+    //     console.log('toggle clicked', darkMode)
+    // }
 
     const navLinksStyle = ({ isActive, isPending }) =>
         isPending
@@ -94,7 +98,7 @@ const Navbar = () => {
                         </> :
                             <Link to="/login" className="btn-style">Login</Link>
                     }
-
+                    <input type="checkbox" onClick={() => { setDarkMode(!darkMode) }} value="synthwave" className="toggle theme-controller" />
 
 
                 </div>
