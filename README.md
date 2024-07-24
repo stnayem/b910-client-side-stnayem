@@ -1,8 +1,19 @@
-# React + Vite
+# 🏆Live Website Link
+ [Awesome React Frameworks](https://www.facebook.com)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# 🚀 React Packages, Components & Libraries 
+This is list of React Packages, Components & Libraries I've used on this project
+- React
+- Vite
+- tailwindcss
+- daisyui
+- sweetalert2
+- react-simple-typewriter
+- react-router-dom
+- firebase
+- prop-types
+- react-awesome-reveal
+- react-hot-toast
+- react-icons
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
