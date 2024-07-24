@@ -1,5 +1,15 @@
 # 🏆Live Website Link
- [Awesome React Frameworks](https://www.facebook.com)
+ [Live link comming soon...](https://www.facebook.com)
+ 
+# 💡 Features
+- Create a new profile by authentication using Email, Facebook, Github.
+- Information about European countries (France, Italy, Spain).
+- Add a personal interested tourist spots list after login to your account.
+- Edit or Delete your tourist spots list anytime.
+- Information about core benefits to book with us.
+  
+# 📌Category
+- Europe
 
 # 🚀 React Packages, Components & Libraries 
 This is list of React Packages, Components & Libraries I've used on this project
