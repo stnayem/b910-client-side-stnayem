@@ -15,6 +15,7 @@ const AddTouristsSpot = () => {
         const country = e.target.country.value;
         const location = e.target.location.value;
         const short_description = e.target.short_description.value;
+        const long_description = e.target.long_description.value;
         const cost = e.target.cost.value;
         const seasonality = e.target.seasonality.value;
         const travelTime = e.target.travelTime.value;
@@ -29,6 +30,7 @@ const AddTouristsSpot = () => {
             country,
             location,
             short_description,
+            long_description,
             cost,
             seasonality,
             travelTime,
@@ -45,6 +47,7 @@ const AddTouristsSpot = () => {
             .then(data => {
                 if (data.insertedId) {
                     toast.success('Data successfully added to Database!')
+                    e.target.reset();
                 }
                 console.log(data)
             })
@@ -128,17 +131,51 @@ const AddTouristsSpot = () => {
                     </div>
                     <div className="form-control">
                         <label className="label">
-                            <span className="dark:text-white label-text">Average Cost</span>
+                            <span className="dark:text-white label-text">Long Description</span>
                         </label>
-                        <input name="cost" type="text" placeholder="Average Cost" className="input input-bordered" required />
+                        <input name="long_description" type="text" placeholder="Long Description" className="input input-bordered" required />
+
                     </div>
 
                     <div className="form-control">
                         <label className="label">
-                            <span className="dark:text-white label-text">Seasonality</span>
+                            <span className="dark:text-white label-text">Average Cost</span>
                         </label>
-                        <input name="seasonality" type="text" placeholder="Seasonality" className="input input-bordered" required />
+                        <input name="cost" type="text" placeholder="Average Cost" className="input input-bordered" required />
                     </div>
+                    <div className="form-control">
+                        {/* start */}
+                        <label
+                            className="block mt-4 mb-2 dark:text-white"
+                            htmlFor="seasonality"
+                        >
+                            Seasonality
+                        </label>
+                        <select
+                            name="seasonality"
+                            id="seasonality"
+                            className="w-full p-2 border rounded-md focus:outline-[#FF497C]"
+                            type="text"
+                            placeholder="Select season"
+                        >
+                            <option value="Spring">
+                                Spring
+                            </option>
+                            <option value="Summer">
+                                Summer
+                            </option>
+                            <option value="Winter">
+                                Winter
+                            </option>
+
+                        </select>
+
+
+
+                        {/* end */}
+                    </div>
+
+
                     <div className="form-control">
                         <label className="label">
                             <span className="dark:text-white label-text">Travel Time</span>

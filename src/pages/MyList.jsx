@@ -20,7 +20,7 @@ const MyList = () => {
             })
     }, [control])
     return (
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-7xl mx-auto ">
             <h2 className="h3-home">My List</h2>
             <div className="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
                 {

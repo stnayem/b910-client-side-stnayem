@@ -19,9 +19,9 @@ const Countries = () => {
             })
     }, [])
     return (
-        <div>
+        <div className="mx-4">
             <h2 className="h3-home">Trending Destination</h2>
-            <div className="grid sm:gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="grid gap-4 sm:gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
                 {
                     allCountry.map(tempCountry => <CountryCard
                         key={tempCountry._id} newCountry={tempCountry} />)

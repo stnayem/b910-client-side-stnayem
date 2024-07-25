@@ -2,7 +2,7 @@ import { FaInstagram } from "react-icons/fa";
 
 const Footer = () => {
     return (
-        <div className="bg-base-200 dark:bg-[#0F172A] dark:text-white mt-6">
+        <div className="bg-base-200 dark:bg-[#0F172A] dark:text-white mt-6 px-4">
             <footer className="dark:text-white max-w-7xl mx-auto footer 
             grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4
             text-base-content pt-10">

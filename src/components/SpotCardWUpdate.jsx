@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
+import { IoLocationOutline } from "react-icons/io5";
 
 
 const SpotCardWUpdate = ({ spot, control, setControl }) => {
@@ -46,20 +47,22 @@ const SpotCardWUpdate = ({ spot, control, setControl }) => {
     }
 
     return (
-        <div>
-            <div className="card card-compact bg-base-100 h-full w-96 shadow-xl">
-                <figure>
+        <div className="mx-auto text-black">
+            <div className="flex flex-col card card-compact bg-base-100 h-full w-96 shadow-xl">
+                <figure className="h-[50%]">
                     <img
                         src={photoUrl}
                         alt="Spot" />
                 </figure>
-                <div className="card-body">
+                <div className="card-body flex-1">
                     <h2 className="card-title">{spotName}</h2>
+                    <div className="flex gap-2 items-center">
+                        <IoLocationOutline /> {location}, {country}
+                    </div>
                     <p>{short_description}</p>
-                    <p>Email: {userEmail}</p>
                     <div className="card-actions justify-end">
-                        <Link to={`/update/${_id}`} className="btn btn-primary">Update</Link>
-                        <button onClick={handleDelete} className="btn bg-red-600 text-white">Delete</button>
+                        <Link to={`/update/${_id}`} className="bg-blue-700 hover:bg-blue-600 text-white font-bold py-2 px-4 border-b-4 border-blue-900 hover:border-blue-700 rounded">Update</Link>
+                        <button onClick={handleDelete} className="bg-orange-700 hover:bg-orange-600 text-white font-bold py-2 px-4 border-b-4 border-orange-900 hover:border-orange-700 rounded">Delete</button>
                     </div>
                 </div>
             </div>

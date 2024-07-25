@@ -8,7 +8,7 @@ import WhyBookWithUs from "../components/WhyBookWithUs";
 
 const Home = () => {
     return (
-        <div className="max-w-7xl mx-auto flex flex-col gap-y-6">
+        <div className="max-w-7xl mx-auto flex flex-col gap-y-6 overflow-hidden">
             <HeroTypeWriter />
 
             <Banner />

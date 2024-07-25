@@ -6,7 +6,7 @@ import { Fade, Slide } from "react-awesome-reveal";
 const WhyBookWithUs = () => {
 
     return (
-        <div>
+        <div className="mx-4 md:mx-auto">
             <h2 className="h3-home text-center">Why Book with
                 <span className="text-[#8D493A] font-bold ">&nbsp; WorldTour</span>?
             </h2>
