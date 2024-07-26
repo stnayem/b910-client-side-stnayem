@@ -20,7 +20,7 @@ const GoogAndGitSignIn = () => {
                 console.log(result.user)
                 setLoading(false);
                 navigate(location?.state ? location.state : "/");
-                toast.success("Register successful");
+                toast.success("Login successful");
             })
             .catch(error => {
                 console.error(error);
