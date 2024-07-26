@@ -17,7 +17,7 @@ const AllTouristsSpot = () => {
 
 
     useEffect(() => {
-        fetch('http://localhost:5005/addTouristsSpot')
+        fetch('https://b9a10-server-side-stnayem.vercel.app/addTouristsSpot')
             .then(resp => resp.json())
             .then(data => {
 

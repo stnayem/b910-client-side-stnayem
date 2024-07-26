@@ -30,8 +30,13 @@ const SpotCard = ({ spot }) => {
                         <IoLocationOutline /> {location}, {country}
                     </div>
                     <p>{short_description}</p>
+                    <div className="flex justify-between">
+                        <span>Cost: ${cost}</span>
+                        <span>Season: {seasonality}</span>
+                    </div>
+
                     <div className="card-actions justify-end">
-                        <Link to={`/spot/${_id}`} className="bg-orange-700 hover:bg-orange-600 text-white font-bold py-2 px-4 border-b-4 border-orange-900 hover:border-orange-700 rounded">Spot Details</Link>
+                        <Link to={`/spot/${_id}`} className="bg-orange-700 hover:bg-orange-600 text-white font-bold py-2 px-4 border-b-4 border-orange-900 hover:border-orange-700 rounded">View Details</Link>
                     </div>
                 </div>
             </div>

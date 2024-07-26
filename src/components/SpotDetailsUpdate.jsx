@@ -17,6 +17,7 @@ const SpotDetailsUpdate = () => {
         const country = e.target.country.value;
         const location = e.target.location.value;
         const short_description = e.target.short_description.value;
+        const long_description = e.target.long_description.value;
         const cost = e.target.cost.value;
         const seasonality = e.target.seasonality.value;
         const travelTime = e.target.travelTime.value;
@@ -29,13 +30,14 @@ const SpotDetailsUpdate = () => {
             country,
             location,
             short_description,
+            long_description,
             cost,
             seasonality,
             travelTime,
             totalVisitorsPerYear,
         }
         console.log(updateSpotDetails);
-        fetch(`http://localhost:5005/addTouristsSpot/${spot._id}`, {
+        fetch(`https://b9a10-server-side-stnayem.vercel.app/addTouristsSpot/${spot._id}`, {
             method: 'PUT',
             headers: { "content-type": "application/json" },
             body: JSON.stringify(updateSpotDetails)
@@ -128,6 +130,17 @@ const SpotDetailsUpdate = () => {
                         <input name="short_description" type="text" placeholder="Short Description" defaultValue={spot.short_description} className="input input-bordered" required />
 
                     </div>
+
+
+                    <div className="form-control">
+                        <label className="label">
+                            <span className="label-text">Long Description</span>
+                        </label>
+                        <input name="long_description" type="text" placeholder="Long Description" defaultValue={spot.long_description} className="input input-bordered" required />
+
+                    </div>
+
+
                     <div className="form-control">
                         <label className="label">
                             <span className="label-text">Average Cost</span>

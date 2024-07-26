@@ -47,18 +47,18 @@ const router = createBrowserRouter([
             {
                 path: '/update/:id',
                 element: <PrivateRoutes><SpotDetailsUpdate /></PrivateRoutes>,
-                loader: ({ params }) => fetch(`http://localhost:5005/addTouristsSpot/${params.id}`),
+                loader: ({ params }) => fetch(`https://b9a10-server-side-stnayem.vercel.app/addTouristsSpot/${params.id}`),
             },
             {
                 path: '/spot/:id',
                 element: <PrivateRoutes><TouristSpotDetails /></PrivateRoutes>,
-                loader: ({ params }) => fetch(`http://localhost:5005/addTouristsSpot/${params.id}`),
+                loader: ({ params }) => fetch(`https://b9a10-server-side-stnayem.vercel.app/addTouristsSpot/${params.id}`),
             },
             // France Italy Spain England Netherlands Switzerland
             {
                 path: '/:country',
                 element: <SpecificCountry />,
-                loader: ({ params }) => fetch(`http://localhost:5005/allCountry/${params.country}`)
+                loader: ({ params }) => fetch(`https://b9a10-server-side-stnayem.vercel.app/allCountry/${params.country}`)
             }
 
         ]

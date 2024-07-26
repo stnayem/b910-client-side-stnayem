@@ -11,6 +11,7 @@ const SpotCardWUpdate = ({ spot, control, setControl }) => {
         country,
         location,
         short_description,
+        long_description,
         cost,
         seasonality,
         travelTime,
@@ -28,7 +29,7 @@ const SpotCardWUpdate = ({ spot, control, setControl }) => {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5005/addTouristsSpot/${_id}`, {
+                fetch(`https://b9a10-server-side-stnayem.vercel.app/addTouristsSpot/${_id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())

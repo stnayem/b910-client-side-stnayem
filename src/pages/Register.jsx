@@ -3,8 +3,10 @@ import Matterhorn from '../assets/europe-imgs/16_Matterhorn_Zermatt.jpg';
 import useAuth from '../auth/useAuth';
 import toast, { Toaster } from 'react-hot-toast';
 import GoogAndGitSignIn from '../components/GoogAndGitSignIn';
+import { useState } from 'react';
 
 const Register = () => {
+    const [pwValid, setpwValid] = useState(false);
     const {
         setLoading,
         signupwithemailpassword,
@@ -21,14 +23,17 @@ const Register = () => {
         const photoUrl = e.target.photoUrl.value;
         const password = e.target.password.value;
         const user = { name, email, photoUrl, password };
-        console.log(user);
+        // console.log(user);
 
         //Password validation
         if (!/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/
             .test(password)) {
-            toast.error("Input a password which has minimum 6 character, 1 lowercase, 1 uppercase, 1 special-char, 1 number.")
+            toast.error("Input a password which has minimum 6 character, 1 lowercase, 1 uppercase, 1 special-char, 1 number.");
+
+            return;
         }
 
+        // console.log('password validated');
         //Create new user  
         signupwithemailpassword(email, password)
             .then(result => {
@@ -45,6 +50,10 @@ const Register = () => {
                 setLoading(false);
                 toast.error(error.message);
             });
+
+
+
+
 
 
 

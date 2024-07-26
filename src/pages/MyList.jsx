@@ -12,7 +12,7 @@ const MyList = () => {
     } = useAuth() || {};
 
     useEffect(() => {
-        fetch(`http://localhost:5005/myCart/${user?.email}`)
+        fetch(`https://b9a10-server-side-stnayem.vercel.app/myCart/${user?.email}`)
             .then(resp => resp.json())
             .then(data => {
                 // console.log(data);

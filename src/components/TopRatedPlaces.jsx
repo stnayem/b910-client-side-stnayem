@@ -8,7 +8,7 @@ const TopRatedPlaces = () => {
             <div className="flex flex-col-reverse md:flex-row items-center justify-center gap-8 my-8">
                 <div className="text-center md:text-left">
                     <Slide>
-                        <h2 className="text-2xl font-bold">Register Your Accommodation</h2>
+                        <h2 className="text-3xl font-semibold mb-2">Register Your Accommodation</h2>
                     </Slide>
                     <Fade delay={1e3} cascade damping={1e-1}>
                         <p className="w-full md:w-[80%]">Reach millions of potential guests and transform your business with us.</p>

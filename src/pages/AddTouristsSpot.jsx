@@ -39,7 +39,7 @@ const AddTouristsSpot = () => {
             userEmail
         }
         console.log(touristsSpotDetails);
-        fetch('http://localhost:5005/addTouristsSpot', {
+        fetch('https://b9a10-server-side-stnayem.vercel.app/addTouristsSpot', {
             method: 'POST',
             headers: { "content-type": "application/json" },
             body: JSON.stringify(touristsSpotDetails)

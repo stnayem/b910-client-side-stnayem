@@ -11,7 +11,7 @@ import { useEffect, useState } from "react";
 const Countries = () => {
     const [allCountry, setAllCountry] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5005/allCountry')
+        fetch('https://b9a10-server-side-stnayem.vercel.app/allCountry')
             .then(res => res.json())
             .then(data => {
                 console.log(data);
